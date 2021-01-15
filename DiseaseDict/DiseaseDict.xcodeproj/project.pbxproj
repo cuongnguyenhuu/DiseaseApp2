@@ -1,0 +1,970 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1969F662CBD66CF6E7EA91DB /* Pods_DiseaseDict.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68843E926D1B91BE260A859 /* Pods_DiseaseDict.framework */; };
+		61F36B33CD7D0F2C8E7CB488 /* Pods_DiseaseDict_DiseaseDictUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A991FAB84671173336774D /* Pods_DiseaseDict_DiseaseDictUITests.framework */; };
+		903C0CCD2C9A49301ACC5488 /* Pods_DiseaseDictTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF49DC62E13FA780A4686F25 /* Pods_DiseaseDictTests.framework */; };
+		C40CB87A2570D24F009CD24D /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CB8792570D24F009CD24D /* CategoryService.swift */; };
+		C40CB87D2570D321009CD24D /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CB87C2570D321009CD24D /* NetworkConfig.swift */; };
+		C40CB87F2570D56C009CD24D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CB87E2570D56C009CD24D /* CategoryModel.swift */; };
+		C40CB8812570E5CB009CD24D /* DiseaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CB8802570E5CB009CD24D /* DiseaseService.swift */; };
+		C40CB8832570E658009CD24D /* DiseaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CB8822570E658009CD24D /* DiseaseModel.swift */; };
+		C40CB8852570E6E5009CD24D /* BasePagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CB8842570E6E5009CD24D /* BasePagingModel.swift */; };
+		C4261E3225A99F66005ABFDD /* BookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4261E3125A99F66005ABFDD /* BookmarkModel.swift */; };
+		C440646B25946C460090A879 /* CategoryRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440646A25946C460090A879 /* CategoryRealmService.swift */; };
+		C440646D259479E90090A879 /* DiseaseRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440646C259479E90090A879 /* DiseaseRealmService.swift */; };
+		C455ED0F257F80A3001B5DD6 /* DiseaseDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455ED0E257F80A3001B5DD6 /* DiseaseDetailModel.swift */; };
+		C455ED11257F8568001B5DD6 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455ED10257F8568001B5DD6 /* String+Extension.swift */; };
+		C45F0E492578D16600D02932 /* Catalogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45F0E482578D16600D02932 /* Catalogue.storyboard */; };
+		C45F0E4B2578D4D200D02932 /* Bookmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45F0E4A2578D4D200D02932 /* Bookmark.storyboard */; };
+		C45F0E4D2578D4F100D02932 /* Reminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45F0E4C2578D4F100D02932 /* Reminder.storyboard */; };
+		C45F0E502578D58100D02932 /* DetailDisease.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45F0E4F2578D58100D02932 /* DetailDisease.storyboard */; };
+		C45F0E522578DC6800D02932 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45F0E512578DC6800D02932 /* Search.storyboard */; };
+		C45F0E542578DD8D00D02932 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F0E532578DD8D00D02932 /* SearchViewController.swift */; };
+		C4916656256A7EDC005D3914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4916655256A7EDC005D3914 /* AppDelegate.swift */; };
+		C4916658256A7EDC005D3914 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4916657256A7EDC005D3914 /* SceneDelegate.swift */; };
+		C491665A256A7EDC005D3914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4916659256A7EDC005D3914 /* ViewController.swift */; };
+		C491665D256A7EDC005D3914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C491665B256A7EDC005D3914 /* Main.storyboard */; };
+		C4916660256A7EDC005D3914 /* DiseaseDict.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C491665E256A7EDC005D3914 /* DiseaseDict.xcdatamodeld */; };
+		C4916662256A7EE2005D3914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4916661256A7EE2005D3914 /* Assets.xcassets */; };
+		C4916665256A7EE2005D3914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4916663256A7EE2005D3914 /* LaunchScreen.storyboard */; };
+		C4916670256A7EE2005D3914 /* DiseaseDictTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491666F256A7EE2005D3914 /* DiseaseDictTests.swift */; };
+		C491667B256A7EE2005D3914 /* DiseaseDictUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491667A256A7EE2005D3914 /* DiseaseDictUITests.swift */; };
+		C4916689256B400B005D3914 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4916688256B400B005D3914 /* Home.storyboard */; };
+		C4A48A502592E60C0039EA9E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A48A4F2592E60C0039EA9E /* BaseModel.swift */; };
+		C4D3796B256E39D600FF989B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3796A256E39D600FF989B /* HomeViewController.swift */; };
+		C4D3796D256E39FA00FF989B /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3796C256E39FA00FF989B /* CatalogueViewController.swift */; };
+		C4D3796F256E3A1100FF989B /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3796E256E3A1100FF989B /* BookmarkViewController.swift */; };
+		C4D37971256E3A1E00FF989B /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D37970256E3A1E00FF989B /* ReminderViewController.swift */; };
+		C4D37973256E3A3800FF989B /* AlphabetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D37972256E3A3800FF989B /* AlphabetViewController.swift */; };
+		C4D37975256E3A4C00FF989B /* DetailDiseaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D37974256E3A4C00FF989B /* DetailDiseaseViewController.swift */; };
+		C4D37978256E847600FF989B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D37977256E847600FF989B /* UIView+Extension.swift */; };
+		C4D3797B256E949E00FF989B /* FunctionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3797A256E949E00FF989B /* FunctionViewCell.swift */; };
+		C4D3797D256E9D4600FF989B /* CatalogueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3797C256E9D4600FF989B /* CatalogueViewCell.swift */; };
+		C4D3797F256EAB3F00FF989B /* BoolmarkViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3797E256EAB3F00FF989B /* BoolmarkViewCell.swift */; };
+		C4D37981256F78A700FF989B /* DiseaseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D37980256F78A700FF989B /* DiseaseViewCell.swift */; };
+		C4D37983256F7BB500FF989B /* UITextFiled+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D37982256F7BB500FF989B /* UITextFiled+Extension.swift */; };
+		C4D37985256F81A000FF989B /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D37984256F81A000FF989B /* DetailViewCell.swift */; };
+		C4D37988256F8D2200FF989B /* FunctionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D37987256F8D2200FF989B /* FunctionModel.swift */; };
+		C4F703E525B177480000F334 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F703E425B177480000F334 /* SettingModel.swift */; };
+		C4F703EA25B177BA0000F334 /* SettingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F703E925B177BA0000F334 /* SettingService.swift */; };
+		C4F703EF25B17B050000F334 /* UserDefaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F703EE25B17B050000F334 /* UserDefaultConfig.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C491666C256A7EE2005D3914 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C491664A256A7EDC005D3914 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4916651256A7EDC005D3914;
+			remoteInfo = DiseaseDict;
+		};
+		C4916677256A7EE2005D3914 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C491664A256A7EDC005D3914 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4916651256A7EDC005D3914;
+			remoteInfo = DiseaseDict;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05F17004AA30165E74E584F7 /* Pods-DiseaseDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiseaseDict.release.xcconfig"; path = "Target Support Files/Pods-DiseaseDict/Pods-DiseaseDict.release.xcconfig"; sourceTree = "<group>"; };
+		32A5B580D09B39CAD0F0915E /* Pods-DiseaseDict-DiseaseDictUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiseaseDict-DiseaseDictUITests.release.xcconfig"; path = "Target Support Files/Pods-DiseaseDict-DiseaseDictUITests/Pods-DiseaseDict-DiseaseDictUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5280CBCF6852C2F79503B169 /* Pods-DiseaseDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiseaseDict.debug.xcconfig"; path = "Target Support Files/Pods-DiseaseDict/Pods-DiseaseDict.debug.xcconfig"; sourceTree = "<group>"; };
+		A8F2BB26449474F041686CBC /* Pods-DiseaseDictTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiseaseDictTests.debug.xcconfig"; path = "Target Support Files/Pods-DiseaseDictTests/Pods-DiseaseDictTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B1A991FAB84671173336774D /* Pods_DiseaseDict_DiseaseDictUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiseaseDict_DiseaseDictUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68843E926D1B91BE260A859 /* Pods_DiseaseDict.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiseaseDict.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40CB8792570D24F009CD24D /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		C40CB87C2570D321009CD24D /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		C40CB87E2570D56C009CD24D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		C40CB8802570E5CB009CD24D /* DiseaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseService.swift; sourceTree = "<group>"; };
+		C40CB8822570E658009CD24D /* DiseaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseModel.swift; sourceTree = "<group>"; };
+		C40CB8842570E6E5009CD24D /* BasePagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePagingModel.swift; sourceTree = "<group>"; };
+		C4261E3125A99F66005ABFDD /* BookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModel.swift; sourceTree = "<group>"; };
+		C440646A25946C460090A879 /* CategoryRealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRealmService.swift; sourceTree = "<group>"; };
+		C440646C259479E90090A879 /* DiseaseRealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseRealmService.swift; sourceTree = "<group>"; };
+		C455ED0E257F80A3001B5DD6 /* DiseaseDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseDetailModel.swift; sourceTree = "<group>"; };
+		C455ED10257F8568001B5DD6 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C45F0E482578D16600D02932 /* Catalogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Catalogue.storyboard; sourceTree = "<group>"; };
+		C45F0E4A2578D4D200D02932 /* Bookmark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookmark.storyboard; sourceTree = "<group>"; };
+		C45F0E4C2578D4F100D02932 /* Reminder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminder.storyboard; sourceTree = "<group>"; };
+		C45F0E4F2578D58100D02932 /* DetailDisease.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailDisease.storyboard; sourceTree = "<group>"; };
+		C45F0E512578DC6800D02932 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		C45F0E532578DD8D00D02932 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C4916652256A7EDC005D3914 /* DiseaseDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiseaseDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4916655256A7EDC005D3914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C4916657256A7EDC005D3914 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C4916659256A7EDC005D3914 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C491665C256A7EDC005D3914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C491665F256A7EDC005D3914 /* DiseaseDict.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiseaseDict.xcdatamodel; sourceTree = "<group>"; };
+		C4916661256A7EE2005D3914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4916664256A7EE2005D3914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C4916666256A7EE2005D3914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C491666B256A7EE2005D3914 /* DiseaseDictTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiseaseDictTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C491666F256A7EE2005D3914 /* DiseaseDictTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseDictTests.swift; sourceTree = "<group>"; };
+		C4916671256A7EE2005D3914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4916676256A7EE2005D3914 /* DiseaseDictUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiseaseDictUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C491667A256A7EE2005D3914 /* DiseaseDictUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseDictUITests.swift; sourceTree = "<group>"; };
+		C491667C256A7EE2005D3914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4916688256B400B005D3914 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		C4A48A4F2592E60C0039EA9E /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		C4D3796A256E39D600FF989B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C4D3796C256E39FA00FF989B /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
+		C4D3796E256E3A1100FF989B /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		C4D37970256E3A1E00FF989B /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		C4D37972256E3A3800FF989B /* AlphabetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetViewController.swift; sourceTree = "<group>"; };
+		C4D37974256E3A4C00FF989B /* DetailDiseaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiseaseViewController.swift; sourceTree = "<group>"; };
+		C4D37977256E847600FF989B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C4D3797A256E949E00FF989B /* FunctionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewCell.swift; sourceTree = "<group>"; };
+		C4D3797C256E9D4600FF989B /* CatalogueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewCell.swift; sourceTree = "<group>"; };
+		C4D3797E256EAB3F00FF989B /* BoolmarkViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolmarkViewCell.swift; sourceTree = "<group>"; };
+		C4D37980256F78A700FF989B /* DiseaseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseViewCell.swift; sourceTree = "<group>"; };
+		C4D37982256F7BB500FF989B /* UITextFiled+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFiled+Extension.swift"; sourceTree = "<group>"; };
+		C4D37984256F81A000FF989B /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
+		C4D37987256F8D2200FF989B /* FunctionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionModel.swift; sourceTree = "<group>"; };
+		C4F703E425B177480000F334 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		C4F703E925B177BA0000F334 /* SettingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingService.swift; sourceTree = "<group>"; };
+		C4F703EE25B17B050000F334 /* UserDefaultConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultConfig.swift; sourceTree = "<group>"; };
+		C8538BF4A66CF857417D44D7 /* Pods-DiseaseDict-DiseaseDictUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiseaseDict-DiseaseDictUITests.debug.xcconfig"; path = "Target Support Files/Pods-DiseaseDict-DiseaseDictUITests/Pods-DiseaseDict-DiseaseDictUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1453B107FBB253023611FBC /* Pods-DiseaseDictTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiseaseDictTests.release.xcconfig"; path = "Target Support Files/Pods-DiseaseDictTests/Pods-DiseaseDictTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF49DC62E13FA780A4686F25 /* Pods_DiseaseDictTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiseaseDictTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C491664F256A7EDC005D3914 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1969F662CBD66CF6E7EA91DB /* Pods_DiseaseDict.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4916668256A7EE2005D3914 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903C0CCD2C9A49301ACC5488 /* Pods_DiseaseDictTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4916673256A7EE2005D3914 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61F36B33CD7D0F2C8E7CB488 /* Pods_DiseaseDict_DiseaseDictUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B806542665F6537880C58D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B68843E926D1B91BE260A859 /* Pods_DiseaseDict.framework */,
+				B1A991FAB84671173336774D /* Pods_DiseaseDict_DiseaseDictUITests.framework */,
+				DF49DC62E13FA780A4686F25 /* Pods_DiseaseDictTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C40CB8782570D22B009CD24D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C440646925946C1F0090A879 /* RealmService */,
+				C40CB8792570D24F009CD24D /* CategoryService.swift */,
+				C40CB8802570E5CB009CD24D /* DiseaseService.swift */,
+				C4F703E925B177BA0000F334 /* SettingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C40CB87B2570D30E009CD24D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C40CB87C2570D321009CD24D /* NetworkConfig.swift */,
+				C4F703EE25B17B050000F334 /* UserDefaultConfig.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C440646925946C1F0090A879 /* RealmService */ = {
+			isa = PBXGroup;
+			children = (
+				C440646A25946C460090A879 /* CategoryRealmService.swift */,
+				C440646C259479E90090A879 /* DiseaseRealmService.swift */,
+			);
+			path = RealmService;
+			sourceTree = "<group>";
+		};
+		C45F0E4E2578D4FC00D02932 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C4916688256B400B005D3914 /* Home.storyboard */,
+				C45F0E482578D16600D02932 /* Catalogue.storyboard */,
+				C45F0E4A2578D4D200D02932 /* Bookmark.storyboard */,
+				C45F0E4C2578D4F100D02932 /* Reminder.storyboard */,
+				C45F0E4F2578D58100D02932 /* DetailDisease.storyboard */,
+				C45F0E512578DC6800D02932 /* Search.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C4916649256A7EDC005D3914 = {
+			isa = PBXGroup;
+			children = (
+				C4916654256A7EDC005D3914 /* DiseaseDict */,
+				C491666E256A7EE2005D3914 /* DiseaseDictTests */,
+				C4916679256A7EE2005D3914 /* DiseaseDictUITests */,
+				C4916653256A7EDC005D3914 /* Products */,
+				FB3B2EFD12EE3CBDD8A3A1A4 /* Pods */,
+				3B806542665F6537880C58D7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C4916653256A7EDC005D3914 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4916652256A7EDC005D3914 /* DiseaseDict.app */,
+				C491666B256A7EE2005D3914 /* DiseaseDictTests.xctest */,
+				C4916676256A7EE2005D3914 /* DiseaseDictUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4916654256A7EDC005D3914 /* DiseaseDict */ = {
+			isa = PBXGroup;
+			children = (
+				C45F0E4E2578D4FC00D02932 /* Storyboards */,
+				C40CB87B2570D30E009CD24D /* Network */,
+				C40CB8782570D22B009CD24D /* Services */,
+				C4D37986256F8D0C00FF989B /* Models */,
+				C4D37979256E947100FF989B /* Views */,
+				C4D37976256E845E00FF989B /* Extensions */,
+				C4D37967256E395E00FF989B /* Controllers */,
+				C4916655256A7EDC005D3914 /* AppDelegate.swift */,
+				C4916657256A7EDC005D3914 /* SceneDelegate.swift */,
+				C4916659256A7EDC005D3914 /* ViewController.swift */,
+				C491665B256A7EDC005D3914 /* Main.storyboard */,
+				C4916661256A7EE2005D3914 /* Assets.xcassets */,
+				C4916663256A7EE2005D3914 /* LaunchScreen.storyboard */,
+				C4916666256A7EE2005D3914 /* Info.plist */,
+				C491665E256A7EDC005D3914 /* DiseaseDict.xcdatamodeld */,
+			);
+			path = DiseaseDict;
+			sourceTree = "<group>";
+		};
+		C491666E256A7EE2005D3914 /* DiseaseDictTests */ = {
+			isa = PBXGroup;
+			children = (
+				C491666F256A7EE2005D3914 /* DiseaseDictTests.swift */,
+				C4916671256A7EE2005D3914 /* Info.plist */,
+			);
+			path = DiseaseDictTests;
+			sourceTree = "<group>";
+		};
+		C4916679256A7EE2005D3914 /* DiseaseDictUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C491667A256A7EE2005D3914 /* DiseaseDictUITests.swift */,
+				C491667C256A7EE2005D3914 /* Info.plist */,
+			);
+			path = DiseaseDictUITests;
+			sourceTree = "<group>";
+		};
+		C4D37967256E395E00FF989B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4D3796A256E39D600FF989B /* HomeViewController.swift */,
+				C4D3796C256E39FA00FF989B /* CatalogueViewController.swift */,
+				C4D3796E256E3A1100FF989B /* BookmarkViewController.swift */,
+				C4D37970256E3A1E00FF989B /* ReminderViewController.swift */,
+				C4D37972256E3A3800FF989B /* AlphabetViewController.swift */,
+				C4D37974256E3A4C00FF989B /* DetailDiseaseViewController.swift */,
+				C45F0E532578DD8D00D02932 /* SearchViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4D37976256E845E00FF989B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4D37977256E847600FF989B /* UIView+Extension.swift */,
+				C4D37982256F7BB500FF989B /* UITextFiled+Extension.swift */,
+				C455ED10257F8568001B5DD6 /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C4D37979256E947100FF989B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4D3797A256E949E00FF989B /* FunctionViewCell.swift */,
+				C4D3797C256E9D4600FF989B /* CatalogueViewCell.swift */,
+				C4D3797E256EAB3F00FF989B /* BoolmarkViewCell.swift */,
+				C4D37980256F78A700FF989B /* DiseaseViewCell.swift */,
+				C4D37984256F81A000FF989B /* DetailViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C4D37986256F8D0C00FF989B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4D37987256F8D2200FF989B /* FunctionModel.swift */,
+				C40CB87E2570D56C009CD24D /* CategoryModel.swift */,
+				C40CB8822570E658009CD24D /* DiseaseModel.swift */,
+				C40CB8842570E6E5009CD24D /* BasePagingModel.swift */,
+				C455ED0E257F80A3001B5DD6 /* DiseaseDetailModel.swift */,
+				C4A48A4F2592E60C0039EA9E /* BaseModel.swift */,
+				C4261E3125A99F66005ABFDD /* BookmarkModel.swift */,
+				C4F703E425B177480000F334 /* SettingModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FB3B2EFD12EE3CBDD8A3A1A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5280CBCF6852C2F79503B169 /* Pods-DiseaseDict.debug.xcconfig */,
+				05F17004AA30165E74E584F7 /* Pods-DiseaseDict.release.xcconfig */,
+				C8538BF4A66CF857417D44D7 /* Pods-DiseaseDict-DiseaseDictUITests.debug.xcconfig */,
+				32A5B580D09B39CAD0F0915E /* Pods-DiseaseDict-DiseaseDictUITests.release.xcconfig */,
+				A8F2BB26449474F041686CBC /* Pods-DiseaseDictTests.debug.xcconfig */,
+				D1453B107FBB253023611FBC /* Pods-DiseaseDictTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4916651256A7EDC005D3914 /* DiseaseDict */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C491667F256A7EE2005D3914 /* Build configuration list for PBXNativeTarget "DiseaseDict" */;
+			buildPhases = (
+				5FB814A6CAAE1289977891FF /* [CP] Check Pods Manifest.lock */,
+				C491664E256A7EDC005D3914 /* Sources */,
+				C491664F256A7EDC005D3914 /* Frameworks */,
+				C4916650256A7EDC005D3914 /* Resources */,
+				86FF4229004F081740058A5A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DiseaseDict;
+			productName = DiseaseDict;
+			productReference = C4916652256A7EDC005D3914 /* DiseaseDict.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C491666A256A7EE2005D3914 /* DiseaseDictTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4916682256A7EE2005D3914 /* Build configuration list for PBXNativeTarget "DiseaseDictTests" */;
+			buildPhases = (
+				A97D47F4CD64DF6AF8240FC3 /* [CP] Check Pods Manifest.lock */,
+				C4916667256A7EE2005D3914 /* Sources */,
+				C4916668256A7EE2005D3914 /* Frameworks */,
+				C4916669256A7EE2005D3914 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C491666D256A7EE2005D3914 /* PBXTargetDependency */,
+			);
+			name = DiseaseDictTests;
+			productName = DiseaseDictTests;
+			productReference = C491666B256A7EE2005D3914 /* DiseaseDictTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C4916675256A7EE2005D3914 /* DiseaseDictUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4916685256A7EE2005D3914 /* Build configuration list for PBXNativeTarget "DiseaseDictUITests" */;
+			buildPhases = (
+				3C3D61481CCA9C1A53303A54 /* [CP] Check Pods Manifest.lock */,
+				C4916672256A7EE2005D3914 /* Sources */,
+				C4916673256A7EE2005D3914 /* Frameworks */,
+				C4916674256A7EE2005D3914 /* Resources */,
+				EFDAD288DE16B8B6E025B621 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4916678256A7EE2005D3914 /* PBXTargetDependency */,
+			);
+			name = DiseaseDictUITests;
+			productName = DiseaseDictUITests;
+			productReference = C4916676256A7EE2005D3914 /* DiseaseDictUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C491664A256A7EDC005D3914 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = Currie;
+				TargetAttributes = {
+					C4916651256A7EDC005D3914 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					C491666A256A7EE2005D3914 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = C4916651256A7EDC005D3914;
+					};
+					C4916675256A7EE2005D3914 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = C4916651256A7EDC005D3914;
+					};
+				};
+			};
+			buildConfigurationList = C491664D256A7EDC005D3914 /* Build configuration list for PBXProject "DiseaseDict" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4916649256A7EDC005D3914;
+			productRefGroup = C4916653256A7EDC005D3914 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4916651256A7EDC005D3914 /* DiseaseDict */,
+				C491666A256A7EE2005D3914 /* DiseaseDictTests */,
+				C4916675256A7EE2005D3914 /* DiseaseDictUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4916650256A7EDC005D3914 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C45F0E502578D58100D02932 /* DetailDisease.storyboard in Resources */,
+				C45F0E492578D16600D02932 /* Catalogue.storyboard in Resources */,
+				C4916665256A7EE2005D3914 /* LaunchScreen.storyboard in Resources */,
+				C4916662256A7EE2005D3914 /* Assets.xcassets in Resources */,
+				C45F0E522578DC6800D02932 /* Search.storyboard in Resources */,
+				C491665D256A7EDC005D3914 /* Main.storyboard in Resources */,
+				C45F0E4B2578D4D200D02932 /* Bookmark.storyboard in Resources */,
+				C4916689256B400B005D3914 /* Home.storyboard in Resources */,
+				C45F0E4D2578D4F100D02932 /* Reminder.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4916669256A7EE2005D3914 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4916674256A7EE2005D3914 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C3D61481CCA9C1A53303A54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiseaseDict-DiseaseDictUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FB814A6CAAE1289977891FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiseaseDict-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86FF4229004F081740058A5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiseaseDict/Pods-DiseaseDict-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiseaseDict/Pods-DiseaseDict-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiseaseDict/Pods-DiseaseDict-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A97D47F4CD64DF6AF8240FC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiseaseDictTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFDAD288DE16B8B6E025B621 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiseaseDict-DiseaseDictUITests/Pods-DiseaseDict-DiseaseDictUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiseaseDict-DiseaseDictUITests/Pods-DiseaseDict-DiseaseDictUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiseaseDict-DiseaseDictUITests/Pods-DiseaseDict-DiseaseDictUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C491664E256A7EDC005D3914 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4D37978256E847600FF989B /* UIView+Extension.swift in Sources */,
+				C4D37973256E3A3800FF989B /* AlphabetViewController.swift in Sources */,
+				C4A48A502592E60C0039EA9E /* BaseModel.swift in Sources */,
+				C40CB8852570E6E5009CD24D /* BasePagingModel.swift in Sources */,
+				C4F703EF25B17B050000F334 /* UserDefaultConfig.swift in Sources */,
+				C4D3797B256E949E00FF989B /* FunctionViewCell.swift in Sources */,
+				C40CB87A2570D24F009CD24D /* CategoryService.swift in Sources */,
+				C40CB87F2570D56C009CD24D /* CategoryModel.swift in Sources */,
+				C440646B25946C460090A879 /* CategoryRealmService.swift in Sources */,
+				C4D3797D256E9D4600FF989B /* CatalogueViewCell.swift in Sources */,
+				C4D3796D256E39FA00FF989B /* CatalogueViewController.swift in Sources */,
+				C40CB87D2570D321009CD24D /* NetworkConfig.swift in Sources */,
+				C455ED0F257F80A3001B5DD6 /* DiseaseDetailModel.swift in Sources */,
+				C40CB8832570E658009CD24D /* DiseaseModel.swift in Sources */,
+				C4D37988256F8D2200FF989B /* FunctionModel.swift in Sources */,
+				C4D37983256F7BB500FF989B /* UITextFiled+Extension.swift in Sources */,
+				C4D37975256E3A4C00FF989B /* DetailDiseaseViewController.swift in Sources */,
+				C440646D259479E90090A879 /* DiseaseRealmService.swift in Sources */,
+				C4D37985256F81A000FF989B /* DetailViewCell.swift in Sources */,
+				C4D3796B256E39D600FF989B /* HomeViewController.swift in Sources */,
+				C45F0E542578DD8D00D02932 /* SearchViewController.swift in Sources */,
+				C4D3797F256EAB3F00FF989B /* BoolmarkViewCell.swift in Sources */,
+				C491665A256A7EDC005D3914 /* ViewController.swift in Sources */,
+				C455ED11257F8568001B5DD6 /* String+Extension.swift in Sources */,
+				C4D3796F256E3A1100FF989B /* BookmarkViewController.swift in Sources */,
+				C40CB8812570E5CB009CD24D /* DiseaseService.swift in Sources */,
+				C4D37971256E3A1E00FF989B /* ReminderViewController.swift in Sources */,
+				C4916656256A7EDC005D3914 /* AppDelegate.swift in Sources */,
+				C4F703EA25B177BA0000F334 /* SettingService.swift in Sources */,
+				C4261E3225A99F66005ABFDD /* BookmarkModel.swift in Sources */,
+				C4F703E525B177480000F334 /* SettingModel.swift in Sources */,
+				C4916660256A7EDC005D3914 /* DiseaseDict.xcdatamodeld in Sources */,
+				C4D37981256F78A700FF989B /* DiseaseViewCell.swift in Sources */,
+				C4916658256A7EDC005D3914 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4916667256A7EE2005D3914 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4916670256A7EE2005D3914 /* DiseaseDictTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4916672256A7EE2005D3914 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C491667B256A7EE2005D3914 /* DiseaseDictUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C491666D256A7EE2005D3914 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4916651256A7EDC005D3914 /* DiseaseDict */;
+			targetProxy = C491666C256A7EE2005D3914 /* PBXContainerItemProxy */;
+		};
+		C4916678256A7EE2005D3914 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4916651256A7EDC005D3914 /* DiseaseDict */;
+			targetProxy = C4916677256A7EE2005D3914 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C491665B256A7EDC005D3914 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C491665C256A7EDC005D3914 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C4916663256A7EE2005D3914 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4916664256A7EE2005D3914 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C491667D256A7EE2005D3914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C491667E256A7EE2005D3914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4916680256A7EE2005D3914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5280CBCF6852C2F79503B169 /* Pods-DiseaseDict.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S2V2Y763N7;
+				INFOPLIST_FILE = DiseaseDict/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.currie.DiseaseDict;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4916681256A7EE2005D3914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05F17004AA30165E74E584F7 /* Pods-DiseaseDict.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S2V2Y763N7;
+				INFOPLIST_FILE = DiseaseDict/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.currie.DiseaseDict;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C4916683256A7EE2005D3914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8F2BB26449474F041686CBC /* Pods-DiseaseDictTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiseaseDictTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.currie.DiseaseDictTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiseaseDict.app/DiseaseDict";
+			};
+			name = Debug;
+		};
+		C4916684256A7EE2005D3914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1453B107FBB253023611FBC /* Pods-DiseaseDictTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiseaseDictTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.currie.DiseaseDictTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiseaseDict.app/DiseaseDict";
+			};
+			name = Release;
+		};
+		C4916686256A7EE2005D3914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8538BF4A66CF857417D44D7 /* Pods-DiseaseDict-DiseaseDictUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiseaseDictUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.currie.DiseaseDictUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiseaseDict;
+			};
+			name = Debug;
+		};
+		C4916687256A7EE2005D3914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32A5B580D09B39CAD0F0915E /* Pods-DiseaseDict-DiseaseDictUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiseaseDictUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.currie.DiseaseDictUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiseaseDict;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C491664D256A7EDC005D3914 /* Build configuration list for PBXProject "DiseaseDict" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C491667D256A7EE2005D3914 /* Debug */,
+				C491667E256A7EE2005D3914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C491667F256A7EE2005D3914 /* Build configuration list for PBXNativeTarget "DiseaseDict" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4916680256A7EE2005D3914 /* Debug */,
+				C4916681256A7EE2005D3914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4916682256A7EE2005D3914 /* Build configuration list for PBXNativeTarget "DiseaseDictTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4916683256A7EE2005D3914 /* Debug */,
+				C4916684256A7EE2005D3914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4916685256A7EE2005D3914 /* Build configuration list for PBXNativeTarget "DiseaseDictUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4916686256A7EE2005D3914 /* Debug */,
+				C4916687256A7EE2005D3914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C491665E256A7EDC005D3914 /* DiseaseDict.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C491665F256A7EDC005D3914 /* DiseaseDict.xcdatamodel */,
+			);
+			currentVersion = C491665F256A7EDC005D3914 /* DiseaseDict.xcdatamodel */;
+			path = DiseaseDict.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C491664A256A7EDC005D3914 /* Project object */;
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d3e-Pd-WMF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bookmark-->
+        <scene sceneID="Vpe-ta-mk7">
+            <objects>
+                <viewController id="d3e-Pd-WMF" customClass="BookmarkViewController" customModule="DiseaseDict" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Ot-tp-jet">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bP0-XK-p2i">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boolmarkCell" rowHeight="98" id="NeX-e8-5aO" customClass="BoolmarkViewCell" customModule="DiseaseDict" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NeX-e8-5aO" id="DnH-IU-Kec">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="OsW-Fg-qjC">
+                                                    <rect key="frame" x="20" y="10" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="1cR-6n-cqA"/>
+                                                        <constraint firstAttribute="height" constant="70" id="8Z0-3A-j3b"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYy-Hb-3ZJ">
+                                                    <rect key="frame" x="110" y="10" width="234" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEZ-jo-Bai">
+                                                    <rect key="frame" x="110" y="41" width="234" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqJ-P1-Uyl">
+                                                    <rect key="frame" x="364" y="34" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="A9p-Tf-qmj"/>
+                                                        <constraint firstAttribute="height" constant="30" id="cTC-uJ-kFf"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="star.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="bookmarkButtonDidTap:" destination="NeX-e8-5aO" eventType="touchUpInside" id="C0E-Wv-mo2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mqJ-P1-Uyl" firstAttribute="centerY" secondItem="DnH-IU-Kec" secondAttribute="centerY" id="CTS-I8-8oF"/>
+                                                <constraint firstAttribute="trailing" secondItem="mqJ-P1-Uyl" secondAttribute="trailing" constant="20" id="CkG-1n-LIF"/>
+                                                <constraint firstItem="dYy-Hb-3ZJ" firstAttribute="leading" secondItem="OsW-Fg-qjC" secondAttribute="trailing" constant="20" id="GVu-cg-1Ij"/>
+                                                <constraint firstItem="OsW-Fg-qjC" firstAttribute="top" secondItem="DnH-IU-Kec" secondAttribute="top" constant="10" id="VKU-pw-y2S"/>
+                                                <constraint firstItem="FEZ-jo-Bai" firstAttribute="top" secondItem="dYy-Hb-3ZJ" secondAttribute="bottom" constant="10" id="hia-EG-mNc"/>
+                                                <constraint firstItem="FEZ-jo-Bai" firstAttribute="leading" secondItem="OsW-Fg-qjC" secondAttribute="trailing" constant="20" id="jDN-ff-UTe"/>
+                                                <constraint firstItem="mqJ-P1-Uyl" firstAttribute="leading" secondItem="dYy-Hb-3ZJ" secondAttribute="trailing" constant="20" id="l3a-CC-pO4"/>
+                                                <constraint firstItem="mqJ-P1-Uyl" firstAttribute="leading" secondItem="FEZ-jo-Bai" secondAttribute="trailing" constant="20" id="lsb-WD-ax5"/>
+                                                <constraint firstItem="OsW-Fg-qjC" firstAttribute="leading" secondItem="DnH-IU-Kec" secondAttribute="leading" constant="20" id="w6F-Kh-fTH"/>
+                                                <constraint firstItem="dYy-Hb-3ZJ" firstAttribute="top" secondItem="DnH-IU-Kec" secondAttribute="top" constant="10" id="xFq-z3-QDy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="bookmarkButton" destination="mqJ-P1-Uyl" id="oyU-bC-aZT"/>
+                                            <outlet property="imageDisease" destination="OsW-Fg-qjC" id="EJO-BE-50f"/>
+                                            <outlet property="subTitle" destination="FEZ-jo-Bai" id="tEY-fi-WBU"/>
+                                            <outlet property="title" destination="dYy-Hb-3ZJ" id="jcx-Db-uXq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zya-Xi-vzc" firstAttribute="trailing" secondItem="bP0-XK-p2i" secondAttribute="trailing" id="Egs-L0-enH"/>
+                            <constraint firstItem="bP0-XK-p2i" firstAttribute="leading" secondItem="Zya-Xi-vzc" secondAttribute="leading" id="Vll-Ip-Te2"/>
+                            <constraint firstItem="bP0-XK-p2i" firstAttribute="top" secondItem="Zya-Xi-vzc" secondAttribute="top" id="gcf-ha-U50"/>
+                            <constraint firstItem="bP0-XK-p2i" firstAttribute="bottom" secondItem="6Ot-tp-jet" secondAttribute="bottom" id="zB1-yI-Xfn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zya-Xi-vzc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bookmark" id="vUb-Ct-ggN"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="bookmarkTable" destination="bP0-XK-p2i" id="VS6-Sa-f4s"/>
+                        <segue destination="g5x-Ht-URJ" kind="show" identifier="goToDetail" id="aRx-ol-4uJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gib-vy-rXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-110.14492753623189" y="1003.7946428571428"/>
+        </scene>
+        <!--DetailDisease-->
+        <scene sceneID="ZV2-2P-suj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailDisease" id="g5x-Ht-URJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NjI-RR-DSU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rnO-GE-TDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-106" y="1458"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="header-avatar" width="384.5" height="80.5"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
+</document>
