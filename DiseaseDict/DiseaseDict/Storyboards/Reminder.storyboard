@@ -443,14 +443,14 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-Be-c7R">
-                                <rect key="frame" x="324" y="772.5" width="70" height="69"/>
+                                <rect key="frame" x="324" y="772" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="BLu-u1-aW7"/>
                                     <constraint firstAttribute="width" constant="70" id="cDT-GU-Eml"/>
                                 </constraints>
                                 <color key="tintColor" name="orange"/>
                                 <state key="normal">
-                                    <imageReference key="backgroundImage" image="plus.circle.fill" catalog="system" symbolScale="default"/>
+                                    <imageReference key="backgroundImage" image="add-reminder" symbolScale="default"/>
                                 </state>
                                 <connections>
                                     <segue destination="89C-NH-WB6" kind="push" identifier="goToCreateReminder" id="t0T-Ai-pFQ"/>
@@ -478,9 +478,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add-reminder" width="48" height="48"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="notes" width="24" height="24"/>
-        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="repeat" width="32" height="32"/>
         <image name="time" width="50" height="50"/>
         <image name="title" width="32" height="32"/>

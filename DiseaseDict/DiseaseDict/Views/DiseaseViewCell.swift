@@ -24,17 +24,9 @@ class DiseaseViewCell: UITableViewCell {
     
     private func updateIconBookmark(){
         if disease!.isBookmarked {
-            if #available(iOS 13.0, *) {
-                bookmarkButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            } else {
-                // Fallback on earlier versions
-            }
+            bookmarkButton.setImage(UIImage(named: "star-filled"), for: .normal)
         } else {
-            if #available(iOS 13.0, *) {
-                bookmarkButton.setImage(UIImage(systemName: "star"), for: .normal)
-            } else {
-                // Fallback on earlier versions
-            }
+            bookmarkButton.setImage(UIImage(named: "star"), for: .normal)
         }
     }
     

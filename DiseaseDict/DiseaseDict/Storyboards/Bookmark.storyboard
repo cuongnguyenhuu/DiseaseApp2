@@ -54,7 +54,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="cTC-uJ-kFf"/>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemYellowColor"/>
-                                                    <state key="normal" image="star.fill" catalog="system"/>
+                                                    <state key="normal" image="star-filled"/>
                                                     <connections>
                                                         <action selector="bookmarkButtonDidTap:" destination="NeX-e8-5aO" eventType="touchUpInside" id="C0E-Wv-mo2"/>
                                                     </connections>
@@ -117,7 +117,7 @@
     </scenes>
     <resources>
         <image name="header-avatar" width="384.5" height="80.5"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="star-filled" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
