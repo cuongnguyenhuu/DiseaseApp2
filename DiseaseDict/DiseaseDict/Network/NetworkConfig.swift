@@ -9,5 +9,5 @@
 import Foundation
 
 class NetworkConfig {
-    static let url = "https://x4-disease-api.herokuapp.com"
+    static let url = "https://api3di.herokuapp.com"
 }

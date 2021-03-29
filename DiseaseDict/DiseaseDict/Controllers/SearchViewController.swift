@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class SearchViewController: UIViewController {
 
 
     @IBOutlet var searchBarView: UISearchBar!
     @IBOutlet weak var resultTable: UITableView!
+    
     private var diseases: [DiseaseModel] = []
     private var disease: DiseaseModel?
+    private var bannerView = GADBannerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,10 @@ class SearchViewController: UIViewController {
         resultTable.delegate = self
         resultTable.dataSource = self
         
-        // Do any additional setup after loading the view.
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
         getAllDiseases()
     }
     
@@ -50,16 +56,6 @@ class SearchViewController: UIViewController {
             self.resultTable.reloadData()
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension SearchViewController: UISearchBarDelegate{
@@ -85,19 +81,31 @@ extension SearchViewController: UISearchBarDelegate{
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return diseases.count
+        return diseases.count + diseases.count/10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let disease = diseases[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "diseaseCell", for: indexPath) as! DiseaseViewCell
-        cell.imageDisease.setShadowStyle()
-        cell.imageDisease?.image = UIImage(named: "header-avatar")
-        cell.title.text = disease.name
-        cell.subTitle.text = disease.overview
-        cell.selectionStyle = .none
-        cell.disease = disease
-        return cell
+        let disease = diseases[indexPath.row - indexPath.row/10]
+        if indexPath.row%10 == 0 && indexPath.row != 0{
+            let cell = UITableViewCell()
+            cell.contentView.addSubview(bannerView)
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            
+            bannerView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+            bannerView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
+            bannerView.topAnchor.constraint(equalTo: cell.contentView.topAnchor).isActive = true
+            bannerView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "diseaseCell", for: indexPath) as! DiseaseViewCell
+            cell.imageDisease.setShadowStyle()
+            cell.imageDisease?.image = UIImage(named: "header-avatar")
+            cell.title.text = disease.name
+            cell.subTitle.text = disease.overview
+            cell.selectionStyle = .none
+            cell.disease = disease
+            return cell
+        }
         
     }
         
@@ -106,7 +114,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.disease = diseases[indexPath.row]
+        self.disease = diseases[indexPath.row - indexPath.row/10]
         self.performSegue(withIdentifier: "goToDetail", sender: self)
     }
 }

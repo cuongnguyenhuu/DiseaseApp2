@@ -11,6 +11,7 @@ import UIKit
 class BookmarkViewController: UIViewController {
 
     private var diseases: [DiseaseModel] = [DiseaseModel]()
+    private var disease: DiseaseModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class BookmarkViewController: UIViewController {
         
         bookmarkTable.delegate = self
         bookmarkTable.dataSource = self
-        // Do any additional setup after loading the view.
+        
         getData()
     }
     
@@ -29,16 +30,6 @@ class BookmarkViewController: UIViewController {
     }
     
     @IBOutlet weak var bookmarkTable: UITableView!
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     func getData() {
         DiseaseRealmService.shared.getBookmarkDiseases { diseases in
@@ -47,7 +38,9 @@ class BookmarkViewController: UIViewController {
         }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! DetailDiseaseViewController).diseaseId = disease?.id
+    }
 }
 
 extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
@@ -70,6 +63,7 @@ extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.disease = self.diseases[indexPath.row]
         self.performSegue(withIdentifier: "goToDetail", sender: self)
     }
 }

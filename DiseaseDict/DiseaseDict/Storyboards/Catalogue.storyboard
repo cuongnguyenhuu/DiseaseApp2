@@ -14,7 +14,7 @@
         <!--Catalogue-->
         <scene sceneID="l34-10-DKf">
             <objects>
-                <viewController id="U7K-xl-p5r" customClass="CatalogueViewController" customModule="DiseaseDict" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Catalogue" id="U7K-xl-p5r" customClass="CatalogueViewController" customModule="DiseaseDict" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rwd-1i-MCc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,6 +88,12 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rB4-hw-aUA" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="738" width="414" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="6cC-Xg-7Pe"/>
+                                </constraints>
+                            </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="7dK-6T-VL4">
                                 <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,14 +102,17 @@
                         <viewLayoutGuide key="safeArea" id="5qi-Ab-FP6"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
+                            <constraint firstItem="rB4-hw-aUA" firstAttribute="width" secondItem="Rwd-1i-MCc" secondAttribute="width" id="9hH-eO-fNW"/>
                             <constraint firstItem="7dK-6T-VL4" firstAttribute="centerX" secondItem="5qi-Ab-FP6" secondAttribute="centerX" id="9n1-a3-1eX"/>
                             <constraint firstItem="KF3-bF-nPe" firstAttribute="width" secondItem="Rwd-1i-MCc" secondAttribute="width" id="Ixy-IN-WFg"/>
                             <constraint firstItem="5qi-Ab-FP6" firstAttribute="trailing" secondItem="6oy-zD-ycR" secondAttribute="trailing" id="Txk-Mb-PGn"/>
                             <constraint firstItem="6oy-zD-ycR" firstAttribute="top" secondItem="5qi-Ab-FP6" secondAttribute="top" id="aWo-Ty-vee"/>
                             <constraint firstItem="6oy-zD-ycR" firstAttribute="leading" secondItem="5qi-Ab-FP6" secondAttribute="leading" id="cfi-Mm-mdq"/>
                             <constraint firstItem="KF3-bF-nPe" firstAttribute="leading" secondItem="5qi-Ab-FP6" secondAttribute="leading" id="gF2-A1-8Rh"/>
+                            <constraint firstItem="rB4-hw-aUA" firstAttribute="bottom" secondItem="Rwd-1i-MCc" secondAttribute="bottom" id="gyl-cj-Rlp"/>
                             <constraint firstAttribute="bottom" secondItem="KF3-bF-nPe" secondAttribute="bottom" id="roB-ws-SS5"/>
                             <constraint firstItem="5qi-Ab-FP6" firstAttribute="trailing" secondItem="KF3-bF-nPe" secondAttribute="trailing" id="tSN-Au-K8y"/>
+                            <constraint firstItem="rB4-hw-aUA" firstAttribute="centerX" secondItem="5qi-Ab-FP6" secondAttribute="centerX" id="vkQ-1c-oWE"/>
                             <constraint firstAttribute="bottom" secondItem="6oy-zD-ycR" secondAttribute="bottom" id="wYo-8h-l9Y"/>
                             <constraint firstItem="7dK-6T-VL4" firstAttribute="centerY" secondItem="5qi-Ab-FP6" secondAttribute="centerY" id="xhg-V6-qR5"/>
                         </constraints>
@@ -114,18 +123,19 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="activityIndicator" destination="7dK-6T-VL4" id="rVC-d4-oY6"/>
+                        <outlet property="bannerView" destination="rB4-hw-aUA" id="YVg-yH-yJG"/>
                         <outlet property="catalogueTable" destination="6oy-zD-ycR" id="uNY-I2-efq"/>
                         <segue destination="H0D-sy-UW1" kind="show" identifier="goToAlphaBet" id="RbV-Ni-GK5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbn-SK-pWI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1499" y="1004"/>
+            <point key="canvasLocation" x="-1500.0000000000002" y="1003.7946428571428"/>
         </scene>
         <!--Alphabet-->
         <scene sceneID="8n6-rI-MlA">
             <objects>
-                <viewController id="H0D-sy-UW1" customClass="AlphabetViewController" customModule="DiseaseDict" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Alphabet" id="H0D-sy-UW1" customClass="AlphabetViewController" customModule="DiseaseDict" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7XF-2x-LcH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gm3-fc-pro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1500.0000000000002" y="1762.5"/>
+            <point key="canvasLocation" x="-1538" y="1807"/>
         </scene>
         <!--DetailDisease-->
         <scene sceneID="vmi-jf-afq">

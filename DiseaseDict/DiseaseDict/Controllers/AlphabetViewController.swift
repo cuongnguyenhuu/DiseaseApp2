@@ -24,20 +24,30 @@ class AlphabetViewController: UIViewController {
         alphabetTable.dataSource = self
         alphabetTable.isHidden = true
         
-//        searchField.setShadowStyle()
         searchField.borderTextFieldStyle()
         searchField.delegate = self
-                
-//        alphabetTable.separatorColor = .clear
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if searchField.text!.isEmpty {
-            DiseaseRealmService.shared.getDiseaseByCategory(id: id ?? "") { disease in
-                self.activityIndicator.stopAnimating()
-                self.alphabetTable.isHidden = false
-                self.diseases = disease
-                self.alphabetTable.reloadData()
+            if UserDefaults.standard.bool(forKey: UserDefaultConfig.isShowCategories) {
+                DiseaseRealmService.shared.getDiseaseByCategory(id: id ?? "") { disease in
+                    self.activityIndicator.stopAnimating()
+                    self.alphabetTable.isHidden = false
+                    self.diseases = disease
+                    self.alphabetTable.reloadData()
+                }
+            } else {
+                DiseaseRealmService.shared.fetchAll { disease in
+                    self.activityIndicator.stopAnimating()
+                    self.alphabetTable.isHidden = false
+                    self.diseases = disease
+                    self.alphabetTable.reloadData()
+                }
             }
         } else {
             activityIndicator.startAnimating()
@@ -70,16 +80,6 @@ class AlphabetViewController: UIViewController {
             vc.title = disease?.name
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension AlphabetViewController: UITableViewDelegate, UITableViewDataSource{

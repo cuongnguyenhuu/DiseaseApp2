@@ -19,6 +19,9 @@
 		C4261E3225A99F66005ABFDD /* BookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4261E3125A99F66005ABFDD /* BookmarkModel.swift */; };
 		C440646B25946C460090A879 /* CategoryRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440646A25946C460090A879 /* CategoryRealmService.swift */; };
 		C440646D259479E90090A879 /* DiseaseRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440646C259479E90090A879 /* DiseaseRealmService.swift */; };
+		C44F06A125B7C87F00070ADA /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44F06A025B7C87F00070ADA /* ReminderModel.swift */; };
+		C44F06A325B7D01E00070ADA /* ReminderRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44F06A225B7D01E00070ADA /* ReminderRealmService.swift */; };
+		C44F06A525B7E07000070ADA /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44F06A425B7E07000070ADA /* ReminderCell.swift */; };
 		C455ED0F257F80A3001B5DD6 /* DiseaseDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455ED0E257F80A3001B5DD6 /* DiseaseDetailModel.swift */; };
 		C455ED11257F8568001B5DD6 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455ED10257F8568001B5DD6 /* String+Extension.swift */; };
 		C45F0E492578D16600D02932 /* Catalogue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45F0E482578D16600D02932 /* Catalogue.storyboard */; };
@@ -27,6 +30,11 @@
 		C45F0E502578D58100D02932 /* DetailDisease.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45F0E4F2578D58100D02932 /* DetailDisease.storyboard */; };
 		C45F0E522578DC6800D02932 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45F0E512578DC6800D02932 /* Search.storyboard */; };
 		C45F0E542578DD8D00D02932 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F0E532578DD8D00D02932 /* SearchViewController.swift */; };
+		C472DFB525B5358A00340012 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C472DFB425B5358A00340012 /* ReminderListViewController.swift */; };
+		C472DFBA25B5406D00340012 /* RepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C472DFB925B5406D00340012 /* RepeatViewController.swift */; };
+		C472DFBF25B544DB00340012 /* RepeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C472DFBE25B544DB00340012 /* RepeatCell.swift */; };
+		C472DFC425B5616900340012 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C472DFC325B5616900340012 /* LoadingViewController.swift */; };
+		C47DDE7525C3BE10004BDC40 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47DDE7425C3BE10004BDC40 /* Reachability.swift */; };
 		C4916656256A7EDC005D3914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4916655256A7EDC005D3914 /* AppDelegate.swift */; };
 		C4916658256A7EDC005D3914 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4916657256A7EDC005D3914 /* SceneDelegate.swift */; };
 		C491665A256A7EDC005D3914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4916659256A7EDC005D3914 /* ViewController.swift */; };
@@ -90,6 +98,9 @@
 		C4261E3125A99F66005ABFDD /* BookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModel.swift; sourceTree = "<group>"; };
 		C440646A25946C460090A879 /* CategoryRealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRealmService.swift; sourceTree = "<group>"; };
 		C440646C259479E90090A879 /* DiseaseRealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseRealmService.swift; sourceTree = "<group>"; };
+		C44F06A025B7C87F00070ADA /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
+		C44F06A225B7D01E00070ADA /* ReminderRealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010ReminderRealmService.swift"; sourceTree = "<group>"; };
+		C44F06A425B7E07000070ADA /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
 		C455ED0E257F80A3001B5DD6 /* DiseaseDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseDetailModel.swift; sourceTree = "<group>"; };
 		C455ED10257F8568001B5DD6 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C45F0E482578D16600D02932 /* Catalogue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Catalogue.storyboard; sourceTree = "<group>"; };
@@ -98,6 +109,11 @@
 		C45F0E4F2578D58100D02932 /* DetailDisease.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailDisease.storyboard; sourceTree = "<group>"; };
 		C45F0E512578DC6800D02932 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		C45F0E532578DD8D00D02932 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C472DFB425B5358A00340012 /* ReminderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListViewController.swift; sourceTree = "<group>"; };
+		C472DFB925B5406D00340012 /* RepeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatViewController.swift; sourceTree = "<group>"; };
+		C472DFBE25B544DB00340012 /* RepeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCell.swift; sourceTree = "<group>"; };
+		C472DFC325B5616900340012 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C47DDE7425C3BE10004BDC40 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C4916652256A7EDC005D3914 /* DiseaseDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiseaseDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4916655256A7EDC005D3914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4916657256A7EDC005D3914 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +216,7 @@
 			children = (
 				C440646A25946C460090A879 /* CategoryRealmService.swift */,
 				C440646C259479E90090A879 /* DiseaseRealmService.swift */,
+				C44F06A225B7D01E00070ADA /* ReminderRealmService.swift */,
 			);
 			path = RealmService;
 			sourceTree = "<group>";
@@ -289,6 +306,9 @@
 				C4D37972256E3A3800FF989B /* AlphabetViewController.swift */,
 				C4D37974256E3A4C00FF989B /* DetailDiseaseViewController.swift */,
 				C45F0E532578DD8D00D02932 /* SearchViewController.swift */,
+				C472DFB425B5358A00340012 /* ReminderListViewController.swift */,
+				C472DFB925B5406D00340012 /* RepeatViewController.swift */,
+				C472DFC325B5616900340012 /* LoadingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -299,6 +319,7 @@
 				C4D37977256E847600FF989B /* UIView+Extension.swift */,
 				C4D37982256F7BB500FF989B /* UITextFiled+Extension.swift */,
 				C455ED10257F8568001B5DD6 /* String+Extension.swift */,
+				C47DDE7425C3BE10004BDC40 /* Reachability.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -311,6 +332,8 @@
 				C4D3797E256EAB3F00FF989B /* BoolmarkViewCell.swift */,
 				C4D37980256F78A700FF989B /* DiseaseViewCell.swift */,
 				C4D37984256F81A000FF989B /* DetailViewCell.swift */,
+				C472DFBE25B544DB00340012 /* RepeatCell.swift */,
+				C44F06A425B7E07000070ADA /* ReminderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,6 +349,7 @@
 				C4A48A4F2592E60C0039EA9E /* BaseModel.swift */,
 				C4261E3125A99F66005ABFDD /* BookmarkModel.swift */,
 				C4F703E425B177480000F334 /* SettingModel.swift */,
+				C44F06A025B7C87F00070ADA /* ReminderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -594,15 +618,20 @@
 				C40CB8852570E6E5009CD24D /* BasePagingModel.swift in Sources */,
 				C4F703EF25B17B050000F334 /* UserDefaultConfig.swift in Sources */,
 				C4D3797B256E949E00FF989B /* FunctionViewCell.swift in Sources */,
+				C44F06A325B7D01E00070ADA /* ReminderRealmService.swift in Sources */,
 				C40CB87A2570D24F009CD24D /* CategoryService.swift in Sources */,
 				C40CB87F2570D56C009CD24D /* CategoryModel.swift in Sources */,
+				C472DFB525B5358A00340012 /* ReminderListViewController.swift in Sources */,
 				C440646B25946C460090A879 /* CategoryRealmService.swift in Sources */,
 				C4D3797D256E9D4600FF989B /* CatalogueViewCell.swift in Sources */,
+				C472DFC425B5616900340012 /* LoadingViewController.swift in Sources */,
 				C4D3796D256E39FA00FF989B /* CatalogueViewController.swift in Sources */,
+				C47DDE7525C3BE10004BDC40 /* Reachability.swift in Sources */,
 				C40CB87D2570D321009CD24D /* NetworkConfig.swift in Sources */,
 				C455ED0F257F80A3001B5DD6 /* DiseaseDetailModel.swift in Sources */,
 				C40CB8832570E658009CD24D /* DiseaseModel.swift in Sources */,
 				C4D37988256F8D2200FF989B /* FunctionModel.swift in Sources */,
+				C44F06A525B7E07000070ADA /* ReminderCell.swift in Sources */,
 				C4D37983256F7BB500FF989B /* UITextFiled+Extension.swift in Sources */,
 				C4D37975256E3A4C00FF989B /* DetailDiseaseViewController.swift in Sources */,
 				C440646D259479E90090A879 /* DiseaseRealmService.swift in Sources */,
@@ -618,8 +647,11 @@
 				C4916656256A7EDC005D3914 /* AppDelegate.swift in Sources */,
 				C4F703EA25B177BA0000F334 /* SettingService.swift in Sources */,
 				C4261E3225A99F66005ABFDD /* BookmarkModel.swift in Sources */,
+				C44F06A125B7C87F00070ADA /* ReminderModel.swift in Sources */,
 				C4F703E525B177480000F334 /* SettingModel.swift in Sources */,
+				C472DFBF25B544DB00340012 /* RepeatCell.swift in Sources */,
 				C4916660256A7EDC005D3914 /* DiseaseDict.xcdatamodeld in Sources */,
+				C472DFBA25B5406D00340012 /* RepeatViewController.swift in Sources */,
 				C4D37981256F78A700FF989B /* DiseaseViewCell.swift in Sources */,
 				C4916658256A7EDC005D3914 /* SceneDelegate.swift in Sources */,
 			);
@@ -795,17 +827,20 @@
 			baseConfigurationReference = 5280CBCF6852C2F79503B169 /* Pods-DiseaseDict.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S2V2Y763N7;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = MRZBS7CMBS;
 				INFOPLIST_FILE = DiseaseDict/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.currie.DiseaseDict;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nextgensolution.disease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = DiseaseApp;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -814,17 +849,20 @@
 			baseConfigurationReference = 05F17004AA30165E74E584F7 /* Pods-DiseaseDict.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S2V2Y763N7;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = MRZBS7CMBS;
 				INFOPLIST_FILE = DiseaseDict/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.currie.DiseaseDict;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nextgensolution.disease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = DiseaseApp;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

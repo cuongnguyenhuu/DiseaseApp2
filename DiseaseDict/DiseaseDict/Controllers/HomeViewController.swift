@@ -9,35 +9,30 @@
 import UIKit
 import ImageSlideshow
 import SoftUIView
+import GoogleMobileAds
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var headerLabel: UILabel!
-    
     @IBOutlet weak var searchView: UIView!
-    
     @IBOutlet weak var sliderView: UIView!
-    
-//    @IBOutlet weak var functionCollectionView: UICollectionView!
-    
-    private var currentIndex = 0
-    private let numberOfColumns = 2
-    private let cellPadding: CGFloat = 15
-//    private var contentWidth: CGFloat {
-//      guard let catalogueTable = functionCollectionView else {
-//        return 0
-//      }
-//      let insets = catalogueTable.contentInset
-//        return (catalogueTable.bounds.width - (insets.left * (CGFloat(numberOfColumns)+1)))/CGFloat(numberOfColumns)
-//    }
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var dictionaryView: UIView!
     @IBOutlet weak var reminderView: UIView!
     @IBOutlet weak var predictView: UIView!
     @IBOutlet weak var bookmarkView: UIView!
-    
     @IBOutlet weak var dicSoftView: SoftUIView!
     @IBOutlet weak var reminderSoftView: SoftUIView!
     @IBOutlet weak var predictSoftView: SoftUIView!
     @IBOutlet weak var bookmarkSoftView: SoftUIView!
+    @IBOutlet weak var username: UILabel!
+    
+    private var currentIndex = 0
+    private let numberOfColumns = 2
+    private let cellPadding: CGFloat = 15
+    var isFirstTime: Bool = true
+    let bannerView2 = GADBannerView()
+    let alertName = UIAlertController(title: "Your nick name", message: "Set a nick name", preferredStyle: .alert)
     
     private var listFunction: [FunctionModel] = [
         FunctionModel(icon: UIImage(named: "dictionary-1")!, title: "Dictionary"),
@@ -49,14 +44,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
+        
+        bannerView2.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView2.rootViewController = self
+        bannerView2.load(GADRequest())
+        
         self.navigationController?.isNavigationBarHidden = true
-        
-        // Do any additional setup after loading the view.
-        
-//        functionCollectionView.delegate = self
-//        functionCollectionView.dataSource = self
-//        functionCollectionView.contentInset = UIEdgeInsets(top: cellPadding, left: cellPadding, bottom: cellPadding, right: cellPadding)
-//        functionCollectionView.backgroundColor = .clear
         
         addSlider()
 
@@ -74,18 +71,67 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         reminderView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapReminder)))
         predictView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapPrediction)))
         bookmarkView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapBookmark)))
+        
+        if let name = UserDefaults.standard.string(forKey: UserDefaultConfig.username) {
+            if !name.isEmpty {
+                self.username.text = name
+            }
+        }
+        
+        alertName.addTextField { (textField: UITextField!) -> Void in
+            textField.placeholder = "Optional"
+        }
+        
+        alertName.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
+            let textfield = self.alertName.textFields![0]
+            if !textfield.text!.trimmingCharacters(in: .whitespaces).isEmpty {
+                UserDefaults.standard.set(textfield.text, forKey: UserDefaultConfig.username)
+                self.username.text = textfield.text
+            } else {
+                UserDefaults.standard.set("Guest!", forKey: UserDefaultConfig.username)
+                self.username.text = "Guest!"
+            }
+            self.isFirstTime = false
+            
+        }))
+        
+        alertName.addAction(UIAlertAction(title: "Skip", style: .destructive, handler: { action in
+            if self.isFirstTime {
+                UserDefaults.standard.set("Guest!", forKey: UserDefaultConfig.username)
+            }
+        }))
+        
+        if let isft = UserDefaults.standard.string(forKey: UserDefaultConfig.username) {
+            isFirstTime = isft.isEmpty
+        }
+        
+        if isFirstTime {
+            present(alertName, animated: true, completion: nil)
+        }
+        
+        username.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapChangeName)))
+    }
+    
+    @objc func didTapChangeName(sender: UILabel){
+        present(alertName, animated: true, completion: nil)
     }
     
     @objc func didTapDictionary(){
-        self.performSegue(withIdentifier: "goToCatalogue", sender: self)
+        if UserDefaults.standard.bool(forKey: UserDefaultConfig.isShowCategories) {
+            self.performSegue(withIdentifier: "goToCatalogue", sender: self)
+        } else {
+            let vc = UIStoryboard(name: "Catalogue", bundle: nil).instantiateViewController(withIdentifier: "Alphabet") as! AlphabetViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @objc func didTapReminder(){
-        self.performSegue(withIdentifier: "goToReminder", sender: self)
+//        self.performSegue(withIdentifier: "goToReminder", sender: self)
     }
     
     @objc func didTapPrediction(){
-        self.performSegue(withIdentifier: "goToCatalogue", sender: self)
+//        self.performSegue(withIdentifier: "goToCatalogue", sender: self)
+        self.performSegue(withIdentifier: "goToReminder", sender: self)
     }
     
     @objc func didTapBookmark(){
@@ -98,26 +144,17 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func addSlider(){
-        let slideShow = ImageSlideshow()
-        slideShow.setImageInputs(
-            [
-                ImageSource(image: UIImage(named: "slider")!),
-                ImageSource(image: UIImage(named: "slider1")!),
-                ImageSource(image: UIImage(named: "slider2")!)
-            ]
-        )
         
         sliderView.layer.cornerRadius = 15.0
-        slideShow.layer.cornerRadius = 15.0
-        slideShow.contentScaleMode = .scaleAspectFill
+        bannerView2.layer.cornerRadius = 15.0
         
-        sliderView.addSubview(slideShow)
-        slideShow.translatesAutoresizingMaskIntoConstraints = false
+        sliderView.addSubview(bannerView2)
+        bannerView2.translatesAutoresizingMaskIntoConstraints = false
         
-        slideShow.leadingAnchor.constraint(equalTo: sliderView.leadingAnchor).isActive = true
-        slideShow.trailingAnchor.constraint(equalTo: sliderView.trailingAnchor).isActive = true
-        slideShow.topAnchor.constraint(equalTo: sliderView.topAnchor).isActive = true
-        slideShow.bottomAnchor.constraint(equalTo: sliderView.bottomAnchor).isActive = true
+        bannerView2.leadingAnchor.constraint(equalTo: sliderView.leadingAnchor).isActive = true
+        bannerView2.trailingAnchor.constraint(equalTo: sliderView.trailingAnchor).isActive = true
+        bannerView2.topAnchor.constraint(equalTo: sliderView.topAnchor).isActive = true
+        bannerView2.bottomAnchor.constraint(equalTo: sliderView.bottomAnchor).isActive = true
     }
     
     @objc func searchViewDidTap(_ sender: UITextField) {
@@ -130,55 +167,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
 }
 
-//extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return listFunction.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let fun = listFunction[indexPath.row]
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "functionCell", for: indexPath) as! FunctionViewCell
-//        cell.contentView.layer.masksToBounds = false
-//        cell.contentView.clipsToBounds = false
-//        cell.imageFunction.image = fun.icon
-//        cell.titleLabel.text = fun.title
-//        cell.layer.cornerRadius = 30.0
-//        cell.softView.cornerRadius = 30
-//        cell.softView.isUserInteractionEnabled = false
-////        cell.bgView.layer.cornerRadius = 30.0
-////        cell.layer.borderWidth = 2
-////        cell.layer.borderColor = UIColor(white: 0, alpha: 0.05).cgColor
-//        if currentIndex == indexPath.row {
-//            cell.softView.mainColor = UIColor(named: "orange")!.cgColor
-//            cell.titleLabel.textColor = .white
-//            currentIndex += 3
-//        } else {
-//            cell.softView.mainColor = UIColor(named: "white")!.cgColor
-//            cell.titleLabel.textColor = .black
-//        }
-//        cell.setShadowStyle()
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        switch indexPath.row {
-//        case 0:
-//            self.performSegue(withIdentifier: "goToCatalogue", sender: self)
-//        case 1:
-//            self.performSegue(withIdentifier: "goToReminder", sender: self)
-//        case 3:
-//            self.performSegue(withIdentifier: "goToBookmark", sender: self)
-//        default:
-//            break
-//        }
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: contentWidth, height: 150)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        cellPadding
-//    }
-//}
+extension HomeViewController: GADBannerViewDelegate {
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("Did receive ad")
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print("Error")
+        print(error)
+    }
+}

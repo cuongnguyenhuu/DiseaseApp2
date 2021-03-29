@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import RealmSwift
+import GoogleMobileAds
 
 @available(iOS 13.0, *)
 @UIApplicationMain
@@ -20,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        if Reachability.isConnectedToNetwork() {
+            print("Network OK")
+        } else {
+            print("Network Fail")
+        }
+
+        
         // set the delegate in didFinishLaunchingWithOptions
         UNUserNotificationCenter.current().delegate = self
         UIApplication.shared.delegate = self
@@ -27,13 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let config = Realm.Configuration(
           // Set the new schema version. This must be greater than the previously used
           // version (if you've never set a schema version before, the version is 0).
-          schemaVersion: 3,
+          schemaVersion: 1,
 
           // Set the block which will be called automatically when opening a Realm with
           // a schema version lower than the one set above
           migrationBlock: { migration, oldSchemaVersion in
             // We haven’t migrated anything yet, so oldSchemaVersion == 0
-            if (oldSchemaVersion < 2) {
+            if (oldSchemaVersion < 1) {
               // Nothing to do!
               // Realm will automatically detect new properties and removed properties
               // And will update the schema on disk automatically
@@ -42,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "17d8f5a86914f2e4dd8676d1ea8bdfdc", kGADSimulatorID as! String ]
+        GADRequestConfiguration().testDeviceIdentifiers = ["17d8f5a86914f2e4dd8676d1ea8bdfdc", kGADSimulatorID as! String]
         
         return true
     }

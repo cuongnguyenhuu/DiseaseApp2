@@ -13,11 +13,6 @@ import RealmSwift
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    private let categoryService = CategoryService()
-    private let diseaseService = DiseaseService()
-    private let settingService = SettingService()
-    var isCategoryLoaded = false
-    var isDiseaseLoaded = false
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -30,86 +25,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let storyboard = UIStoryboard(name: "LaunchScreen", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "LaunchViewController")
+        
+        
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoadingViewController")
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
         
-        self.settingService.getSettings { [self] setting in
-            //            print( "AAAA:" + setting.hasNewData)
-            //save data
-            UserDefaults.standard.set(setting.isShowCategories, forKey: UserDefaultConfig.isShowCategories)
-            UserDefaults.standard.set(setting.isShowAds, forKey: UserDefaultConfig.isShowAds)
-            
-            let oldHasNewData = UserDefaults.standard.string(forKey: UserDefaultConfig.hasNewData)
-            if setting.hasNewData != oldHasNewData {
-                print("Load new data")
-                UserDefaults.standard.set(setting.hasNewData, forKey: UserDefaultConfig.hasNewData)
-                self.loadNewData()
-            } else {
-                print("This is newest data")
-                let storyboard = UIStoryboard(name: "Home", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            }
-        }
-        
-        
-        
     }
     
-    func loadNewData(){
-        let concurrentQueue = DispatchQueue(label: "com.some.concurrentQueue", attributes: .concurrent)
-        
-        concurrentQueue.sync {
-            self.categoryService.getCategories { categories, error in
-                
-                if !error {
-                    CategoryRealmService.shared.saveCategories(categories: categories) { finished in
-                        self.isCategoryLoaded = true
-                        if self.isCategoryLoaded && self.isDiseaseLoaded {
-                            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-                            let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
-                            self.window?.rootViewController = initialViewController
-                            self.window?.makeKeyAndVisible()
-                        }
-                    }
-                } else {
-                    self.isCategoryLoaded = true
-                    if self.isCategoryLoaded && self.isDiseaseLoaded {
-                        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-                        let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
-                        self.window?.rootViewController = initialViewController
-                        self.window?.makeKeyAndVisible()
-                    }
-                }
-            }
-        }
-        concurrentQueue.sync {
-            self.diseaseService.getAllDiseases { diseases, error in
-                if !error {
-                    DiseaseRealmService.shared.saveAll(diseases: diseases) {  finished in
-                        self.isDiseaseLoaded = true
-                        if self.isCategoryLoaded && self.isDiseaseLoaded {
-                            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-                            let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
-                            self.window?.rootViewController = initialViewController
-                            self.window?.makeKeyAndVisible()
-                        }
-                    }
-                } else {
-                        self.isDiseaseLoaded = true
-                    if self.isCategoryLoaded && self.isDiseaseLoaded {
-                        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-                        let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
-                        self.window?.rootViewController = initialViewController
-                        self.window?.makeKeyAndVisible()
-                    }
-                }
-            }
-        }
-    }
+    
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

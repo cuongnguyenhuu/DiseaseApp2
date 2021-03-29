@@ -9,15 +9,16 @@
 import UIKit
 import Kingfisher
 import SoftUIView
+import GoogleMobileAds
 
 class CatalogueViewController: UIViewController {
     
+    @IBOutlet weak var bannerView: GADBannerView!
+    
     private let numberOfColumns = 2
     private let cellPadding: CGFloat = 30
-//    private let categoryService = CategoryService()
     private var categories: [CategoryModel] = []
     private var categorySelected: CategoryModel?
-    
     private var contentWidth: CGFloat {
       guard let catalogueTable = catalogueTable else {
         return 0
@@ -29,6 +30,10 @@ class CatalogueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = false
         catalogueTable.backgroundColor = .clear
@@ -37,11 +42,6 @@ class CatalogueViewController: UIViewController {
         catalogueTable.dataSource = self
         catalogueTable.contentInset = UIEdgeInsets(top: cellPadding, left: cellPadding, bottom: cellPadding, right: cellPadding)
         
-//        navigationItem.setHidesBackButton(true, animated: false)
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.isTranslucent = true
-//        self.navigationController?.view.backgroundColor = .clear
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,11 +54,6 @@ class CatalogueViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
-//
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.isTranslucent = true
-//        self.navigationController?.view.backgroundColor = .clear
     }
     
     @IBOutlet weak var catalogueTable: UICollectionView!
@@ -66,22 +61,10 @@ class CatalogueViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "goToAlphaBet" {
         let vc =  segue.destination as! AlphabetViewController
         vc.id = categorySelected?.id
         vc.title = categorySelected?.name
-//        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension CatalogueViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -102,8 +85,6 @@ extension CatalogueViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.softView.mainColor = UIColor.white.cgColor
         cell.softView.isUserInteractionEnabled = false
         cell.contentView.setShadowStyle()
-//        cell.layer.borderWidth = 2
-//        cell.layer.borderColor = UIColor(white: 0, alpha: 0.05).cgColor
         cell.setShadowStyle()
         return cell
     }

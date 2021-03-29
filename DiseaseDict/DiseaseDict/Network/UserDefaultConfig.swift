@@ -12,4 +12,16 @@ class UserDefaultConfig {
     static let isShowAds = "isShowAds"
     static let hasNewData = "hasNewData"
     static let isShowCategories = "isShowCategories"
+    static let isFirstTime = "isFirstTime"
+    static let username = "username"
+    
+    static let repeatList = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thurday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ]
 }

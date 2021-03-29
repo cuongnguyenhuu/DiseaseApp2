@@ -12,8 +12,10 @@ target 'DiseaseDict' do
   pod 'Kingfisher', '~> 5.15.7'
   pod 'SoftUIView'
   pod 'RealmSwift'
-
-
+  pod 'ScrollableSegmentedControl', '~> 1.5.0'
+  pod 'Schedule', '~> 2.0'
+  pod 'Google-Mobile-Ads-SDK'
+  
   target 'DiseaseDictTests' do
     inherit! :search_paths
     # Pods for testing

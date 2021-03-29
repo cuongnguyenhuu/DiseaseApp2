@@ -8,13 +8,18 @@
 
 import UIKit
 import ImageSlideshow
+import ScrollableSegmentedControl
+import SoftUIView
+import GoogleMobileAds
 
 class DetailDiseaseViewController: UIViewController {
-
+    
     private let diseaseService = DiseaseService()
     private var disease:DiseaseDetailModel?
     private var data = Dictionary<String, String>()
-//    private var isFinis: Int = 0
+    
+    @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
+    @IBOutlet weak var softView: SoftUIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +39,7 @@ class DetailDiseaseViewController: UIViewController {
                 ImageSource(image: UIImage(named: "header-avatar")!)
             ]
         )
-                
+        
         sliderView.addSubview(slideShow)
         slideShow.translatesAutoresizingMaskIntoConstraints = false
         
@@ -43,11 +48,27 @@ class DetailDiseaseViewController: UIViewController {
         slideShow.topAnchor.constraint(equalTo: sliderView.topAnchor).isActive = true
         slideShow.bottomAnchor.constraint(equalTo: sliderView.bottomAnchor).isActive = true
         
-        segmentView.isHidden = true
         segmentView.removeAllSegments()
         
         getDisease()
+        
+        segmentedControl.segmentStyle = .textOnly
+        segmentedControl.underlineSelected = true
+        segmentedControl.addTarget(self, action: #selector(segmentSelected(sender:)), for: .valueChanged)
+        segmentedControl.fixedSegmentWidth = false
+        
+        softView.mainColor = UIColor.white.cgColor
     }
+    
+    @objc func segmentSelected(sender:ScrollableSegmentedControl) {
+        if self.shouldTrackingTab {
+            self.detailTable.setContentOffset(self.detailTable.contentOffset, animated: false)
+            DispatchQueue.main.async {
+                self.detailTable.scrollToRow(at: IndexPath(row: 0, section: sender.selectedSegmentIndex), at: .top, animated: true)
+            }
+        }
+    }
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var sliderView: UIView!
@@ -65,14 +86,9 @@ class DetailDiseaseViewController: UIViewController {
         DispatchQueue.main.async {
             self.detailTable.scrollToRow(at: IndexPath(row: 0, section: self.segmentView.selectedSegmentIndex), at: .top, animated: true)
         }
-        shouldTrackingScrolling = false
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-//            self.shouldTrackingScrolling = true
-//        }
-        
     }
     
-    private var shouldTrackingScrolling = true
+    private var shouldTrackingTab = true
     var diseaseId: String?
     
     func getDisease(){
@@ -80,7 +96,7 @@ class DetailDiseaseViewController: UIViewController {
             return
         }
         diseaseService.getDiseaseById(id: id) { disease in
-//            print(disease)
+            //            print(disease)
             self.disease = disease
             self.data = disease.prepareData()
             self.activityIndicator.stopAnimating()
@@ -102,21 +118,13 @@ class DetailDiseaseViewController: UIViewController {
         }
         
         for n in 0..<self.data.count {
-            if n<4{
-                self.segmentView.insertSegment(withTitle: self.data.keys[self.data.index(self.data.startIndex, offsetBy: n)], at: n, animated: true)
-            }
+            //            if n<4{
+            self.segmentedControl.insertSegment(withTitle: self.data.keys[self.data.index(self.data.startIndex, offsetBy: n)], at: n)
+            //            }
+            self.segmentedControl.selectedSegmentIndex = 0
         }
     }
-    /*
-     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
 
 extension DetailDiseaseViewController: UITableViewDelegate, UITableViewDataSource {
@@ -130,10 +138,6 @@ extension DetailDiseaseViewController: UITableViewDelegate, UITableViewDataSourc
         cell.selectionStyle = .none
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 200
-//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionView = UIView()
@@ -154,31 +158,26 @@ extension DetailDiseaseViewController: UITableViewDelegate, UITableViewDataSourc
         return data.count
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if self.segmentView.selectedSegmentIndex == self.detailTable.indexPathsForVisibleRows?.first?.section as! Int {
-            shouldTrackingScrolling = true
-        }
-        if shouldTrackingScrolling {
-            DispatchQueue.main.async {
-                self.segmentView.selectedSegmentIndex = self.detailTable.indexPathsForVisibleRows?.first?.section as! Int
-//                self.oldSegmentIndex = self.detailTable.indexPathsForVisibleRows?.first?.section as! Int
-            }
-        }
-        hightOfSlider.constant = (200 - scrollView.contentOffset.y) > 200 ? 200 : (200 - scrollView.contentOffset.y) < 0 ? 0 : (200 - scrollView.contentOffset.y)
-        
-        if (20 + scrollView.contentOffset.y)/70 > 1 {
-            paddingTopOfTable.constant = 70
-        } else if (20 + scrollView.contentOffset.y)/70 < 0 {
-            paddingTopOfTable.constant = 20
-        } else {
-            paddingTopOfTable.constant = (20 + scrollView.contentOffset.y)
-        }
-        
-        if scrollView.contentOffset.y > 200 {
-            segmentView.isHidden = false
-        } else {
-            segmentView.isHidden = true
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.shouldTrackingTab = true
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            self.shouldTrackingTab = true
         }
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.shouldTrackingTab = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if !self.shouldTrackingTab {
+            DispatchQueue.main.async {
+                self.segmentedControl.selectedSegmentIndex = self.detailTable.indexPathsForVisibleRows?.first?.section as! Int
+            }
+        }
+    }
 }
