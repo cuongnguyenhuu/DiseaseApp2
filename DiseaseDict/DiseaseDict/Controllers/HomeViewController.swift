@@ -44,14 +44,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
+//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        bannerView.rootViewController = self
+//        bannerView.load(GADRequest())
+//        bannerView.delegate = self
         
-        bannerView2.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView2.rootViewController = self
-        bannerView2.load(GADRequest())
+//        bannerView2.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        bannerView2.rootViewController = self
+//        bannerView2.load(GADRequest())
         
         self.navigationController?.isNavigationBarHidden = true
         
@@ -145,16 +145,37 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     private func addSlider(){
         
+        let slideShow = ImageSlideshow()
+        slideShow.setImageInputs(
+            [
+                ImageSource(image: UIImage(named: "slider")!),
+                ImageSource(image: UIImage(named: "slider1")!),
+                ImageSource(image: UIImage(named: "slider2")!)
+            ]
+        )
+        
         sliderView.layer.cornerRadius = 15.0
-        bannerView2.layer.cornerRadius = 15.0
+        slideShow.layer.cornerRadius = 15.0
+        slideShow.contentScaleMode = .scaleAspectFill
         
-        sliderView.addSubview(bannerView2)
-        bannerView2.translatesAutoresizingMaskIntoConstraints = false
+        sliderView.addSubview(slideShow)
+        slideShow.translatesAutoresizingMaskIntoConstraints = false
         
-        bannerView2.leadingAnchor.constraint(equalTo: sliderView.leadingAnchor).isActive = true
-        bannerView2.trailingAnchor.constraint(equalTo: sliderView.trailingAnchor).isActive = true
-        bannerView2.topAnchor.constraint(equalTo: sliderView.topAnchor).isActive = true
-        bannerView2.bottomAnchor.constraint(equalTo: sliderView.bottomAnchor).isActive = true
+        slideShow.leadingAnchor.constraint(equalTo: sliderView.leadingAnchor).isActive = true
+        slideShow.trailingAnchor.constraint(equalTo: sliderView.trailingAnchor).isActive = true
+        slideShow.topAnchor.constraint(equalTo: sliderView.topAnchor).isActive = true
+        slideShow.bottomAnchor.constraint(equalTo: sliderView.bottomAnchor).isActive = true
+        
+//        sliderView.layer.cornerRadius = 15.0
+//        bannerView2.layer.cornerRadius = 15.0
+//
+//        sliderView.addSubview(bannerView2)
+//        bannerView2.translatesAutoresizingMaskIntoConstraints = false
+//
+//        bannerView2.leadingAnchor.constraint(equalTo: sliderView.leadingAnchor).isActive = true
+//        bannerView2.trailingAnchor.constraint(equalTo: sliderView.trailingAnchor).isActive = true
+//        bannerView2.topAnchor.constraint(equalTo: sliderView.topAnchor).isActive = true
+//        bannerView2.bottomAnchor.constraint(equalTo: sliderView.bottomAnchor).isActive = true
     }
     
     @objc func searchViewDidTap(_ sender: UITextField) {

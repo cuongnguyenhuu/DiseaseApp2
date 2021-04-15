@@ -30,9 +30,9 @@ class CatalogueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        bannerView.rootViewController = self
+//        bannerView.load(GADRequest())
         
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = false

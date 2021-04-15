@@ -27,9 +27,9 @@ class SearchViewController: UIViewController {
         resultTable.delegate = self
         resultTable.dataSource = self
         
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        bannerView.rootViewController = self
+//        bannerView.load(GADRequest())
         
         getAllDiseases()
     }
@@ -85,18 +85,29 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let disease = diseases[indexPath.row - indexPath.row/10]
-        if indexPath.row%10 == 0 && indexPath.row != 0{
-            let cell = UITableViewCell()
-            cell.contentView.addSubview(bannerView)
-            bannerView.translatesAutoresizingMaskIntoConstraints = false
-            
-            bannerView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
-            bannerView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
-            bannerView.topAnchor.constraint(equalTo: cell.contentView.topAnchor).isActive = true
-            bannerView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
-            return cell
-        } else {
+//        let disease = diseases[indexPath.row - indexPath.row/10]
+//        if indexPath.row%10 == 0 && indexPath.row != 0{
+//            let cell = UITableViewCell()
+//            cell.contentView.addSubview(bannerView)
+//            bannerView.translatesAutoresizingMaskIntoConstraints = false
+//
+//            bannerView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+//            bannerView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
+//            bannerView.topAnchor.constraint(equalTo: cell.contentView.topAnchor).isActive = true
+//            bannerView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
+//            return cell
+//        } else {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "diseaseCell", for: indexPath) as! DiseaseViewCell
+//            cell.imageDisease.setShadowStyle()
+//            cell.imageDisease?.image = UIImage(named: "header-avatar")
+//            cell.title.text = disease.name
+//            cell.subTitle.text = disease.overview
+//            cell.selectionStyle = .none
+//            cell.disease = disease
+//            return cell
+//        }
+        let disease = diseases[indexPath.row]
+        
             let cell = tableView.dequeueReusableCell(withIdentifier: "diseaseCell", for: indexPath) as! DiseaseViewCell
             cell.imageDisease.setShadowStyle()
             cell.imageDisease?.image = UIImage(named: "header-avatar")
@@ -105,7 +116,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
             cell.selectionStyle = .none
             cell.disease = disease
             return cell
-        }
         
     }
         
